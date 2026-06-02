@@ -1,6 +1,6 @@
 # arnipay for WooCommerce
 
-Pasarela de pago para WooCommerce que integra **arnipay** (Geek Wallet) en tiendas paraguayas. Permite a los clientes pagar con **QR**, **tigo money** y **Personal Pay** desde el checkout estándar de WooCommerce.
+Pasarela de pago para WooCommerce que integra **arnipay** (arnipay.com.py) en tiendas paraguayas. Permite a los clientes pagar con **QR**, **tigo money** y **Personal Pay** desde el checkout estándar de WooCommerce.
 
 [![PHP](https://img.shields.io/badge/PHP-8.0%2B-777BB4?logo=php&logoColor=white)](https://www.php.net/)
 [![WordPress](https://img.shields.io/badge/WordPress-6.0%2B-21759B?logo=wordpress&logoColor=white)](https://wordpress.org/)
@@ -59,7 +59,7 @@ git clone https://github.com/arnipay/arnipay-woo.git
 
 ## Configuración
 
-1. **Conseguí tus credenciales** con Geek Wallet (`support@geek-wallet.com`):
+1. **Conseguí tus credenciales** en arnipay (`arnipay.com.py`):
    - Client ID
    - Client Secret
    - Webhook Secret
