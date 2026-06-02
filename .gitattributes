@@ -1,0 +1,35 @@
+# Normaliza los finales de línea: que git decida y no haya conflictos
+# entre devs en Windows y devs en Linux/Mac.
+* text=auto eol=lf
+
+# Archivos binarios — no tocar
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg binary
+*.ico binary
+*.zip binary
+*.gz binary
+*.pdf binary
+
+# Sintaxis específica por extensión
+*.php text diff=php
+*.js text
+*.css text
+*.md text
+*.txt text
+*.xml text
+
+# --- export-ignore ---
+# Archivos que NO van en el ZIP que genera GitHub automáticamente
+# cuando alguien descarga el repo como "Source code (zip)".
+# Esto deja el ZIP listo para instalar como plugin sin archivos de dev.
+/tests           export-ignore
+/phpunit.xml     export-ignore
+/.gitignore      export-ignore
+/.gitattributes  export-ignore
+/.github         export-ignore
+/.editorconfig   export-ignore
+/HANDOFF.md      export-ignore
+/CONTRIBUTING.md export-ignore

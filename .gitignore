@@ -1,0 +1,62 @@
+# --- WordPress / PHP ---
+wp-config.php
+.htaccess
+*.log
+/logs/
+
+# --- Composer (si en el futuro se agrega) ---
+/vendor/
+composer.lock
+# Excepción: el SDK incluido SÍ se versiona (es código del plugin)
+!/lib/vendor/
+
+# --- PHPUnit ---
+.phpunit.result.cache
+.phpunit.cache/
+/coverage/
+/coverage.xml
+/coverage.clover
+
+# --- Node (si en algún momento agregás build de assets) ---
+/node_modules/
+npm-debug.log*
+yarn-error.log*
+package-lock.json
+
+# --- Editores e IDEs ---
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+*~
+
+# --- Sistema operativo ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# --- Archivos de build / distribución ---
+/build/
+/dist/
+*.zip
+
+# --- Credenciales o variables locales ---
+# (nunca debería haber, pero por las dudas)
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+credentials.txt
+secrets.txt
+
+# --- Misc ---
+*.bak
+*.tmp
+*.orig
