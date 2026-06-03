@@ -1,0 +1,52 @@
+{
+    "packages": [
+        {
+            "name": "geekwalletsrl/arnipay-sdk",
+            "version": "dev-main",
+            "version_normalized": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GEEKWALLETSRL/arnipay-sdk-php.git",
+                "reference": "ba2833520d4243dad0334ca712121b42335ee232"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GEEKWALLETSRL/arnipay-sdk-php/zipball/ba2833520d4243dad0334ca712121b42335ee232",
+                "reference": "ba2833520d4243dad0334ca712121b42335ee232",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.4",
+                "php-mock/php-mock-phpunit": "^2.13",
+                "phpunit/phpunit": "^9.0",
+                "vlucas/phpdotenv": "^5.3"
+            },
+            "time": "2026-02-04T00:36:35+00:00",
+            "default-branch": true,
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Arnipay\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "SDK for integrating with the Arnipay payment processing system",
+            "support": {
+                "issues": "https://github.com/GEEKWALLETSRL/arnipay-sdk-php/issues",
+                "source": "https://github.com/GEEKWALLETSRL/arnipay-sdk-php/tree/main"
+            },
+            "install-path": "../geekwalletsrl/arnipay-sdk"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

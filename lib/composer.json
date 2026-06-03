@@ -1,0 +1,5 @@
+{
+    "require": {
+        "geekwalletsrl/arnipay-sdk": "dev-main"
+    }
+}

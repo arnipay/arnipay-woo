@@ -1,0 +1,446 @@
+/**
+ * arnipay checkout styles.
+ *
+ * Mobile-first compact selector: arnipay is the gateway and the customer
+ * chooses the real payment method before being redirected to arnipay.
+ */
+
+.arnipay-payments {
+	display: inline-flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 7px;
+	vertical-align: middle;
+	margin-left: 6px;
+	max-width: 100%;
+}
+
+.arnipay-payments .arnipay-pay-icon {
+	height: 22px;
+	width: auto;
+	max-width: 64px;
+	object-fit: contain;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.arnipay-payments .arnipay-pay-icon--arnipay {
+	max-width: 84px;
+}
+
+li.payment_method_arnipay_woo_aw label .arnipay-payments,
+.wc-block-components-payment-method-label .arnipay-payments {
+	margin-left: 4px;
+}
+
+/* En el selector nativo de WooCommerce se oculta visualmente el texto del
+ * método para evitar duplicar "arnipay" junto al logo. El texto sigue en el
+ * HTML para accesibilidad y compatibilidad; el cliente ve solo los iconos. */
+li.payment_method_arnipay_woo_aw > label {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 0;
+	line-height: 1;
+}
+
+li.payment_method_arnipay_woo_aw > label .arnipay-payments {
+	font-size: 16px;
+	line-height: 1;
+	margin-left: 0;
+}
+
+.woocommerce-checkout .payment_box.payment_method_arnipay_woo_aw {
+	background: transparent !important;
+	padding: 0 !important;
+	margin-top: 10px;
+}
+
+.woocommerce-checkout .payment_box.payment_method_arnipay_woo_aw::before {
+	display: none !important;
+}
+
+.arnipay-method-selector {
+	--arnipay-blue: #3558ff;
+	--arnipay-blue-dark: #2834d9;
+	--arnipay-border: #e0e5ef;
+	--arnipay-muted: #667085;
+	--arnipay-text: #101828;
+	background: #fff;
+	border: 1px solid var(--arnipay-border);
+	border-radius: 18px;
+	box-shadow: 0 8px 22px rgba(15, 23, 42, 0.045);
+	padding: 18px;
+	color: var(--arnipay-text);
+	max-width: 100%;
+}
+
+.arnipay-method-selector * {
+	box-sizing: border-box;
+}
+
+.arnipay-method-selector__head {
+	margin-bottom: 12px;
+}
+
+.arnipay-method-selector__head h3 {
+	margin: 0 0 4px;
+	font-size: clamp(19px, 4.9vw, 24px);
+	line-height: 1.12;
+	font-weight: 800;
+	color: #101828;
+}
+
+.arnipay-method-selector__head p {
+	margin: 0;
+	font-size: clamp(13px, 3.25vw, 15px);
+	line-height: 1.35;
+	color: var(--arnipay-muted);
+}
+
+.arnipay-method-selector__grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 10px;
+	margin-bottom: 14px;
+}
+
+.arnipay-method-option {
+	position: relative;
+}
+
+.arnipay-method-option input {
+	position: absolute;
+	inline-size: 1px;
+	block-size: 1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	clip-path: inset(50%);
+	border: 0;
+	padding: 0;
+	margin: -1px;
+}
+
+.arnipay-method-option label {
+	display: grid;
+	grid-template-columns: 24px 48px minmax(0, 1fr);
+	grid-template-areas: 'radio icon text';
+	align-items: center;
+	justify-items: start;
+	gap: 10px;
+	min-height: 76px;
+	padding: 12px;
+	border: 1.5px solid var(--arnipay-border);
+	border-radius: 15px;
+	background: #fff;
+	cursor: pointer;
+	transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease, background .18s ease;
+}
+
+.arnipay-method-option label:hover {
+	border-color: rgba(53, 88, 255, .34);
+	box-shadow: 0 8px 18px rgba(15, 23, 42, .05);
+}
+
+.arnipay-method-option input:checked + label {
+	border-color: var(--arnipay-blue);
+	background: linear-gradient(180deg, rgba(53, 88, 255, .055), rgba(53, 88, 255, .015));
+	box-shadow: 0 10px 22px rgba(53, 88, 255, .12);
+}
+
+.arnipay-method-option input:focus-visible + label {
+	outline: 3px solid rgba(53, 88, 255, .18);
+	outline-offset: 2px;
+}
+
+.arnipay-method-option__radio {
+	grid-area: radio;
+	justify-self: start;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	border: 1.8px solid #c6ccd8;
+	background: #fff;
+	position: relative;
+}
+
+.arnipay-method-option input:checked + label .arnipay-method-option__radio {
+	border-color: var(--arnipay-blue);
+}
+
+.arnipay-method-option input:checked + label .arnipay-method-option__radio::after {
+	content: '';
+	position: absolute;
+	inset: 5px;
+	border-radius: 50%;
+	background: var(--arnipay-blue);
+}
+
+.arnipay-method-option__icon {
+	grid-area: icon;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+}
+
+.arnipay-method-option__icon img {
+	max-width: 48px;
+	max-height: 42px;
+	width: auto;
+	height: auto;
+	object-fit: contain;
+	display: block;
+}
+
+.arnipay-method-option__text {
+	grid-area: text;
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	align-items: flex-start;
+	text-align: left;
+	line-height: 1.22;
+	min-width: 0;
+}
+
+.arnipay-method-option__text strong {
+	font-size: 14px;
+	font-weight: 800;
+	color: #111827;
+}
+
+.arnipay-method-option__text small {
+	font-size: 12px;
+	line-height: 1.24;
+	color: var(--arnipay-muted);
+}
+
+.arnipay-method-selector__security {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	padding: 13px 14px;
+	border: 1px solid var(--arnipay-border);
+	border-radius: 15px;
+	background: #fbfcff;
+	margin-bottom: 12px;
+	font-size: 14px;
+	line-height: 1.35;
+	color: #26324a;
+}
+
+.arnipay-method-selector__security strong {
+	font-weight: 600;
+}
+
+.arnipay-method-selector__security span:not(.arnipay-method-selector__shield) {
+	color: #344054;
+}
+
+.arnipay-method-selector__shield {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 34px;
+	height: 34px;
+	border-radius: 11px;
+	border: 1.8px solid var(--arnipay-blue);
+	color: var(--arnipay-blue);
+	font-weight: 800;
+	font-size: 17px;
+	flex: 0 0 34px;
+}
+
+.arnipay-method-selector__note {
+	margin: 0;
+	font-size: 12px;
+	line-height: 1.35;
+	color: var(--arnipay-muted);
+}
+
+#place_order.arnipay-final-order-button,
+.woocommerce #payment #place_order.arnipay-final-order-button {
+	display: inline-flex !important;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	width: 100%;
+	min-height: 52px;
+	border-radius: 13px !important;
+	border: 0 !important;
+	background: linear-gradient(135deg, #3558ff, #2834d9) !important;
+	box-shadow: 0 12px 24px rgba(53, 88, 255, .24) !important;
+	color: #fff !important;
+	font-size: 16px !important;
+	font-weight: 800 !important;
+	text-transform: none !important;
+}
+
+#place_order.arnipay-final-order-button::before,
+.woocommerce #payment #place_order.arnipay-final-order-button::before {
+	content: '';
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	background: #fff url('../img/arnipay-mark.svg') center/16px 16px no-repeat;
+}
+
+#place_order.arnipay-final-order-button:hover,
+.woocommerce #payment #place_order.arnipay-final-order-button:hover {
+	filter: brightness(.96);
+	transform: translateY(-1px);
+}
+
+/* Tablet and desktop: keep the cards visual, but much less invasive. */
+@media (min-width: 640px) {
+	.arnipay-method-selector {
+		padding: 22px;
+		border-radius: 19px;
+	}
+
+	.arnipay-method-selector__head {
+		margin-bottom: 18px;
+	}
+
+	.arnipay-method-selector__head h3 {
+		font-size: 28px;
+	}
+
+	.arnipay-method-selector__head p {
+		font-size: 16px;
+	}
+
+	.arnipay-method-selector__grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 12px;
+		margin-bottom: 18px;
+	}
+
+	.arnipay-method-option label {
+		grid-template-columns: 28px minmax(0, 1fr);
+		grid-template-areas:
+			'radio icon'
+			'text text';
+		justify-items: center;
+		gap: 9px 10px;
+		min-height: 118px;
+		padding: 14px 12px;
+		border-radius: 16px;
+	}
+
+	.arnipay-method-option__radio {
+		width: 28px;
+		height: 28px;
+	}
+
+	.arnipay-method-option input:checked + label .arnipay-method-option__radio::after {
+		inset: 6px;
+	}
+
+	.arnipay-method-option__icon {
+		width: 64px;
+		height: 48px;
+	}
+
+	.arnipay-method-option__icon img {
+		max-width: 64px;
+		max-height: 46px;
+	}
+
+	.arnipay-method-option__text {
+		align-items: center;
+		text-align: center;
+	}
+
+	.arnipay-method-option__text strong {
+		font-size: 14px;
+	}
+
+	.arnipay-method-option__text small {
+		font-size: 11.5px;
+	}
+
+	.arnipay-method-selector__security {
+		align-items: center;
+		padding: 15px 16px;
+		font-size: 15px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.arnipay-method-selector {
+		padding: 24px;
+	}
+
+	.arnipay-method-selector__head h3 {
+		font-size: 30px;
+	}
+
+	.arnipay-method-option label {
+		min-height: 126px;
+		padding: 16px 13px;
+	}
+
+	.arnipay-method-option__icon {
+		width: 72px;
+		height: 54px;
+	}
+
+	.arnipay-method-option__icon img {
+		max-width: 72px;
+		max-height: 52px;
+	}
+}
+
+
+@media (max-width: 480px) {
+	.arnipay-method-selector__head h3 {
+		font-size: 20px;
+		line-height: 1.12;
+	}
+
+	.arnipay-method-selector__head p {
+		font-size: 13.5px;
+		line-height: 1.32;
+	}
+}
+
+@media (max-width: 380px) {
+	.arnipay-method-selector__head h3 {
+		font-size: 19px;
+	}
+
+	.arnipay-method-selector__head p {
+		font-size: 13px;
+	}
+
+	.arnipay-method-selector {
+		padding: 14px;
+		border-radius: 16px;
+	}
+
+	.arnipay-method-option label {
+		grid-template-columns: 22px 42px minmax(0, 1fr);
+		gap: 8px;
+		padding: 10px;
+		min-height: 70px;
+	}
+
+	.arnipay-method-option__icon {
+		width: 42px;
+		height: 42px;
+	}
+
+	.arnipay-method-option__icon img {
+		max-width: 42px;
+		max-height: 38px;
+	}
+
+	.arnipay-method-option__text small {
+		display: none;
+	}
+}
