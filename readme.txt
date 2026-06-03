@@ -6,9 +6,9 @@ Probado hasta: 6.9
 Requiere PHP: 8.2
 Requiere WooCommerce: 9.0
 Probado con WooCommerce: 10.4
-Versión estable: 1.0.34
-Licencia: GPLv3
-URI de licencia: https://www.gnu.org/licenses/gpl-3.0.html
+Versión estable: 1.0.35
+Licencia: GPLv2 or later
+URI de licencia: https://www.gnu.org/licenses/gpl-2.0.html
 
 Pasarela de pago arnipay para WooCommerce. Acepta pagos seguros en Guaraníes (PYG).
 
@@ -122,6 +122,12 @@ Verifica que:
 * Compatibilidad con WordPress Multisite
 
 == Notas de actualización ==
+
+= 1.0.35 =
+* Añadido: iconos del plugin para la pantalla de actualizaciones de WordPress y detalles del plugin.
+* Añadido: `assets/icon.svg`, `assets/icon-128x128.png` y `assets/icon-256x256.png` generados desde el isotipo oficial de arnipay.
+* Mejorado: metadata explícita de iconos para Plugin Update Checker.
+* Sin cambios funcionales en pagos, webhooks, checkout ni seguridad.
 
 = 1.0.34 =
 * URL del repositorio de actualizaciones configurada: https://github.com/arnipay/arnipay-woo
@@ -335,7 +341,7 @@ El plugin proporciona varios filtros y acciones para extender su funcionalidad. 
 
 Para soporte técnico o reportar problemas:
 
-* Contacta con el autor:
+* Contacta con el autor: https://arnipay.com.py
 * Sitio web: https://arnipay.com.py
 
 == Privacidad ==
