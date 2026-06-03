@@ -32,8 +32,8 @@ Pasarela de pago para WooCommerce que integra **arnipay** (arnipay.com.py) en ti
 | Componente | Versión |
 |---|---|
 | WordPress | 6.0+ |
-| WooCommerce | 7.0+ |
-| PHP | 8.0+ |
+| WooCommerce | 9.0+ |
+| PHP | 8.2+ |
 | Moneda de la tienda | PYG (guaraní paraguayo) |
 | HTTPS | Obligatorio (arnipay rechaza webhooks por HTTP) |
 
@@ -102,7 +102,7 @@ arnipay-woo/
 ## Tests
 
 ```bash
-# Requisito: PHP 8.0+ y PHPUnit 9.x
+# Requisito: PHP 8.2+ y PHPUnit 9.x
 phpunit --testsuite unit
 ```
 
